@@ -10,7 +10,7 @@ const int daysInMonth[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 const int daysToMonth[12] = {0,31,59,90,120,151,181,212,243,273,304,334};
 
 //days
-string dayName[7] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+string dayName[7] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 
 //day 0 => 01-01-1900 i.e. Monday
 const int DAY0 = 1;
@@ -55,7 +55,7 @@ long DaysSince(int day, int month, int year){
 }
 
 int DayOfWeek(int day, int month, int year){
-    return(DAY0 + (DaysSince(day, month, year))%7);
+    return(DaysSince(day, month, year))%7;
 }
 
 int main(){
