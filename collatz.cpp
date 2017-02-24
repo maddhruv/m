@@ -6,25 +6,16 @@
 ------------https://en.wikipedia.org/wiki/Collatz_conjecture*/
 using namespace std;
 
-bool mod(int a){
-  if(a%2==0)
-    return true;
-  else
-    return false;
-}
 int main(){
   int n, result, i{0};
   cout<<"Prints the hailstone sequence for any positive whole number:\n";
   cin>>n;
   while(i<11){
-    if(mod(n)){
+    cout<<n<<", ";
+    if(n%2==0)
       n = n/2;
-      cout<<n<<", ";
-    }
-    else if(!mod(n)){
+    else
       n = 3*n+1;
-      cout<<n<<", ";
-    }
     i++;
   }
   return 0;
