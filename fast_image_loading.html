@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fast Image Loading</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .blur{
+        filter: blur(25px);
+        transition: all 1s;
+      }
+      .noblur{
+        transition: all 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="blur" src="assets/small.jpg" width="100%"/>
+    <script type="text/javascript">
+      var image = document.images[0];
+      var bigImage = document.createElement("img");
+
+      bigImage.onload = function() {
+        image.src = this.src;
+        image.className = "noblur";
+      }
+
+      setTimeout(function(){
+        bigImage.src = "assets/big.jpg";
+      }, 100);
+    </script>
+  </body>
+</html>
